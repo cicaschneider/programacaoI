@@ -1,0 +1,27 @@
+package aula04abril;
+
+import java.time.LocalDate;
+import java.time.Period;
+
+public class Ex2 {
+
+	public static void main(String[] args) {
+        contaTempo(1, 1, 2026);
+    }
+	
+	public static void contaTempo(int dia, int mes, int ano) {
+        LocalDate dataAtual = LocalDate.now();
+        LocalDate dataFutura = LocalDate.of(ano, mes, dia);
+
+	    Period periodo = Period.between(dataAtual, dataFutura);
+
+	    int anos = periodo.getYears();
+	    int meses = periodo.getMonths();
+        int dias = periodo.getDays();
+        
+	    System.out.println("Faltam " + anos + " ano(s), " + meses + " mês(es) e " + dias + " dia(s) para o ano de " + ano);
+	    }
+	    
+}
+
+
